@@ -15,9 +15,12 @@ module.exports = {
 
     //RestaurantRoutes
     // GET_RESTAURANT_BY_ID:'/restaurant/id/',
-    // GET_RESTAURANT_BY_LOCATION:'/restaurant/location',
-    // GET_RESTAURANT_PROFILE:'restaurant/profile',
-    GET_RESTAURANT_PROFILE: '/profile',
+     GET_RESTAURANT_BY_LOCATION:'/restaurant/location',
+     GET_ALL_RESTAURANTS: '/restaurants'
+     GET_RESTAURANT_PROFILE:'restaurant/profile',
+    
+     POST_RESTAURANT_SIGNUP: '/signup'
+     GET_RESTAURANT_PROFILE: '/profile',
     GET_RESTAURANT_MENU: '/menu',
     GET_RESTAURANT_BY_ID: '/id/',
     GET_RESTAURANT_BY_LOCATION: '/location',

@@ -8,6 +8,7 @@ const {
   POST_CUSTOMER_SIGNUP,
   UPDATE_CUSTOMER_PROFILE,
   UPDATE_CUSTOMER_IMAGE,
+  POST_CUSTOMER_IMAGE,
 } = require("../config/routeConstants");
 
 customerRouter
@@ -17,6 +18,7 @@ customerRouter.route(GET_CUSTOMER_PROFILE).get(customerServices.getCustomer);
 customerRouter
   .route(POST_CUSTOMER_SIGNUP)
   .post(customerServices.createCustomer);
+customerRouter.route(POST_CUSTOMER_IMAGE).post(customerServices.uploadImage);
 customerRouter
   .route(UPDATE_CUSTOMER_PROFILE)
   .put(customerServices.updateCustomerProfile);
