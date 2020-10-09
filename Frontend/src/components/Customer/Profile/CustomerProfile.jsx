@@ -8,7 +8,7 @@ import { Route } from "react-router";
 import cookie from "react-cookies";
 class UserProfile extends Component {
   state = {
-    _id: 0,
+    customer_id: 0,
     customer_name: "",
     birthday: "",
     about: "",
@@ -17,6 +17,7 @@ class UserProfile extends Component {
     things_loved: "",
     find_me: "",
     blog_ref: "",
+    selected_file: {},
 
     MODIFIED: "",
 
@@ -60,6 +61,23 @@ class UserProfile extends Component {
           }
         );
       });
+
+    // axios
+    //   .get(
+    //     `${Constants.BACKEND_SERVER}/users/getuser`,
+    //     localStorage.getItem("userId")
+    //   )
+    //   .then((res) => {
+    //     const body = res.body;
+    //     if (body._id) {
+    //       this.setState({
+    //         ...body
+    //       });
+
+    //     } else {
+    //       console.log("Error fetching user data");
+    //     }
+    //   });
   }
 
   handleEdit = (e) => {
@@ -103,7 +121,113 @@ class UserProfile extends Component {
       });
   };
 
+  onFileUpload = (e) => {
+    e.preventDefault();
+    //  this.setState({ projectId: this.props.match.params.projectId })
+    let formData = new FormData();
+    formData.append("file", this.state.selectedFile);
+    formData.append("customer_id", this.state.customer_id);
+    formData.append("customer_name", this.state.customer_name);
+    console.log(this.state);
+    console.log(JSON.stringify(formData));
+    axios
+      .post(
+        `${RouteConstants.BACKEND_URL}/customer${RouteConstants.POST_CUSTOMER_IMAGE}`,
+        {
+          file: formData,
+          customer_id: this.state.customer_id,
+          customer_name: this.state.customer_name,
+        }
+      )
+      .then((response) => {
+        if (response.status === 201) {
+          window.alert("File Uploaded Successfully");
+        } else {
+          console.log(response);
+        }
+      });
+  };
+
+  fileData = () => {
+    if (this.state.selectedFile) {
+      return (
+        <div>
+          <p>File Details:</p>
+          <p>File Name: {this.state.selectedFile.name}</p>
+          <p>File Type: {this.state.selectedFile.type}</p>
+          <p>
+            Last Modified:{" "}
+            {this.state.selectedFile.lastModifiedDate.toDateString()}
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <br />
+          <p>Choose before Pressing the Upload button</p>
+        </div>
+      );
+    }
+  };
+
+  onFileChange = (event) => {
+    //  event.preventDefault();
+
+    // Update the state
+    this.setState({ selectedFile: event.target.files[0] });
+    if (this.state.selectedFile) {
+      this.setState({ app: this.state.selectedFile.name });
+    }
+  };
+
   render() {
+    // let addresschange
+    // if (this.state.oldDetails.ADDRESS) {
+    //     addresschange = <div className='addressOptions'>
+    //         <div className="option">
+    //             Street Address:{" "}
+    //             <input
+    //                 label={this.state.oldDetails.ADDRESS.STREET}
+    //                 disabled={this.state.disabled}
+    //                 value={this.state.ADDRESS.STREET}
+    //                 onChange={this.handleAddressChange}
+    //                 name="STREET"
+    //             />
+    //         </div>
+    //         <div className="option">
+    //             State:{" "}
+    //             <input
+    //                 label={this.state.oldDetails.ADDRESS.STATE}
+    //                 disabled={this.state.disabled}
+    //                 value={this.state.ADDRESS.STATE}
+    //                 onChange={this.handleAddressChange}
+    //                 name="STATE"
+    //             />
+    //         </div>
+    //         <div className="option">
+    //             Country:{" "}
+    //             <input
+    //                 //  label={this.state.oldDetails.ADDRESS.COUNTRY}
+    //                 disabled={this.state.disabled}
+    //                 value={this.state.ADDRESS.COUNTRY}
+    //                 onChange={this.handleAddressChange}
+    //                 name="COUNTRY"
+    //             />
+    //         </div>
+    //         <div className="option">
+    //             Zip Code:{" "}
+    //             <input
+    //                 // label={this.state.oldDetails.ADDRESS.PIN}
+    //                 disabled={this.state.disabled}
+    //                 value={this.state.ADDRESS.PIN}
+    //                 onChange={this.handleAddressChange}
+    //                 name="PIN"
+    //             />
+    //         </div>
+    //     </div>
+
+    // }
     return (
       <div className="profile">
         <form className="userdetails">
@@ -195,7 +319,19 @@ class UserProfile extends Component {
               name="blog_ref"
             />
           </div>
-
+          <div className="option">
+            Profile Image:{" "}
+            {/* <input
+                            label={this.state.oldDetails.blog_ref}
+                            disabled={this.state.disabled}
+                            value={this.state.blog_ref}
+                            onChange={this.handleChange}
+                            name="blog_ref"
+                        /> */}
+            <input type="file" onChange={this.onFileChange} />
+            <button onClick={this.onFileUpload}>Upload!</button>
+          </div>
+          <div className="option">{this.fileData()}</div>
           {/* {addresschange} */}
           <div
             className="option"
