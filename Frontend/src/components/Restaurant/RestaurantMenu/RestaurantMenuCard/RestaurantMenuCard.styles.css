@@ -1,0 +1,16 @@
+.restImage2 {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  margin-left: 15px;
+}
+.formData {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0px 2px;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 20px;
+  /* width: 650px; */
+}

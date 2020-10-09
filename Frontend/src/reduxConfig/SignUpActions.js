@@ -1,6 +1,8 @@
 import actionTypes from "./actionTypes";
 
 export const nameHandler = (payload) => {
+  // console.log("actions " + payload)
+
   return {
     type: actionTypes.SIGNUP_NAME,
     payload: payload,
@@ -24,7 +26,12 @@ export const confirmPasswordHandler = (payload) => {
     payload: payload,
   };
 };
-
+export const aboutHandler = (payload) => {
+  return {
+    type: actionTypes.SIGNUP_ABOUT,
+    payload: payload,
+  };
+};
 export const phoneHandler = (payload) => {
   return {
     type: actionTypes.SIGNUP_PHONE,

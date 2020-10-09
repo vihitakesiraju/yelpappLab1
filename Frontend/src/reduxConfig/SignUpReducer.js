@@ -2,10 +2,18 @@ import actionTypes from "./actionTypes";
 
 import { initialState } from "./storeObject";
 
-const signupReducer = (state = initialState, action) => {
-  console.log("Signup reducer");
+const SignUpReducer = (state = initialState, action) => {
+  // console.log("signup reducer " + JSON.stringify(action));
   switch (action.type) {
     case actionTypes.SIGNUP_NAME:
+      // let temp = {
+      //     ...state,
+      //     signup: {
+      //         ...state.signup,
+      //         name: action.payload
+      //     }
+      // }
+      // console.log(temp)
       return {
         ...state,
         signup: {
@@ -45,7 +53,14 @@ const signupReducer = (state = initialState, action) => {
           birthday: action.payload,
         },
       };
-
+    case actionTypes.SIGNUP_ABOUT:
+      return {
+        ...state,
+        signup: {
+          ...state.signup,
+          about: action.payload,
+        },
+      };
     case actionTypes.SIGNUP_PHONE:
       return {
         ...state,
@@ -63,6 +78,14 @@ const signupReducer = (state = initialState, action) => {
         },
       };
     case actionTypes.SIGNUP_THINGS_LOVED:
+      // let temp2 = {
+      //     ...state,
+      //     signup: {
+      //         ...state.signup,
+      //         thingsLoved: action.payload
+      //     }
+      // }
+      // console.log(temp2);
       return {
         ...state,
         signup: {
@@ -88,8 +111,7 @@ const signupReducer = (state = initialState, action) => {
       };
     default:
       return initialState;
-      break;
   }
 };
 
-export default signupReducer;
+export default SignUpReducer;

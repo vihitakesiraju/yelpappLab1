@@ -10,12 +10,16 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedIn: true,
+        user_email: action.payload.user_email,
+        user_type: action.payload.user_type,
       };
     case actionTypes.USER_LOGOUT:
       console.log("logging out");
       return {
         ...state,
         loggedIn: false,
+        user_email: "",
+        user_type: 0,
       };
     case actionTypes.LOGIN_EMAIL_HANDLER:
       return {
@@ -43,7 +47,6 @@ const loginReducer = (state = initialState, action) => {
       };
     default:
       return initialState;
-      break;
   }
 };
 

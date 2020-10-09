@@ -1,8 +1,13 @@
 import actionTypes from "./actionTypes";
 import { initialState } from "./storeObject";
+
 const ProfileReducer = (state = initialState, action) => {
+  // console.log("load --------" + JSON.stringify(action))
+
   switch (action.type) {
     case actionTypes.PROFILE_UPDATE_OLD_DETAILS:
+      console.log("In Profile Reducer");
+
       return {
         ...state,
         profile: {
@@ -17,6 +22,7 @@ const ProfileReducer = (state = initialState, action) => {
       console.log("In Profile load");
       return {
         ...state,
+        loggedIn: true,
         signup: {
           ...action.payload,
         },
@@ -52,11 +58,19 @@ const ProfileReducer = (state = initialState, action) => {
       };
 
     case actionTypes.SIGNUP_NAME:
+      // let temp = {
+      //     ...state,
+      //     signup: {
+      //         ...state.signup,
+      //         name: action.payload
+      //     }
+      // }
+      // console.log(temp)
       return {
         ...state,
         signup: {
           ...state.signup,
-          name: action.payload,
+          customer_name: action.payload,
         },
       };
 
@@ -68,12 +82,20 @@ const ProfileReducer = (state = initialState, action) => {
           birthday: action.payload,
         },
       };
+    case actionTypes.SIGNUP_ABOUT:
+      return {
+        ...state,
+        signup: {
+          ...state.signup,
+          about: action.payload,
+        },
+      };
     case actionTypes.SIGNUP_PHONE:
       return {
         ...state,
         signup: {
           ...state.signup,
-          phone: action.payload,
+          contact_number: action.payload,
         },
       };
     case actionTypes.SIGNUP_USERTYPE:
@@ -81,10 +103,18 @@ const ProfileReducer = (state = initialState, action) => {
         ...state,
         signup: {
           ...state.signup,
-          userType: action.payload,
+          user_type: action.payload,
         },
       };
     case actionTypes.SIGNUP_THINGS_LOVED:
+      // let temp2 = {
+      //     ...state,
+      //     signup: {
+      //         ...state.signup,
+      //         thingsLoved: action.payload
+      //     }
+      // }
+      // console.log(temp2);
       return {
         ...state,
         signup: {
@@ -97,10 +127,18 @@ const ProfileReducer = (state = initialState, action) => {
         ...state,
         signup: {
           ...state.signup,
-          findMe: action.payload,
+          find_me: action.payload,
         },
       };
     case actionTypes.SIGNUP_BLOGS:
+      // console.log("blog edit")
+      // console.log({
+      //     ...state,
+      //     signup: {
+      //         ...state.signup,
+      //         blog_ref: action.payload
+      //     }
+      // })
       return {
         ...state,
         signup: {
@@ -110,7 +148,6 @@ const ProfileReducer = (state = initialState, action) => {
       };
     default:
       return initialState;
-      break;
   }
 };
 

@@ -29,6 +29,9 @@ app.use(
   })
 );
 
+// app.use(bodyParser.urlencoded({
+//     extended: true
+//   }));
 app.use(bodyParser.json());
 
 //Allow Access Control
@@ -49,8 +52,10 @@ app.use(function (req, res, next) {
 
 app.use("/", loginRoutes);
 app.use("/customer", customerRoutes);
-app.use("/restaurant/", restaurantRoutes);
+app.use("/restaurant", restaurantRoutes);
 app.use("/orders", orderRoutes);
+app.use("/reviews", reviewRoutes);
+
 app.use("/events", eventRoutes);
 
 //start your server on port 3001
