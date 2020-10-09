@@ -26,11 +26,21 @@ module.exports = {
     GET_RESTAURANT_BY_LOCATION: '/location',
     GET_RESTAURANT_BY_DISH: '/dish',
     GET_RESTAURANT_REVIEWS: '/reviews',
+    GET_RESTAURANT_SEARCH: '/search',
 
     UPDATE_RESTAURANT_PROFILE: '/profile',
     POST_RESTAURANT_MENU: '/menu',
+    UPDATE_MENU_ITEM:'/menuItem',
+    POST_RESTAURANT_MENU: '/menu',
 
+    //Reviews
+    GET_REVIEWS_BY_RESTAURANT: '/restaurant',
+    GET_REVIEWS_ID_RESTAURANT: '/restaurantID',
+    GET_REVIEWS_BY_CUSTOMER: '/customer',
+    POST_REVIEW_CUSTOMER: '/customer',
+    UPDATE_REVIEW_CUSTOMER: '/customer',
 
+    
     //Orders
     GET_ORDER_BY_ID: '/id',
     GET_ORDER_BY_CUSTOMER: '/customerId',
@@ -40,14 +50,16 @@ module.exports = {
 
     //Events
     GET_EVENTS_BY_NAME: '/name',
-    GET_ALL_EVENTS: '/all',
+    GET_ALL_EVENTS: '/events',
     GET_EVENT_DETAILS: '/event',
+    GET_EVENT_BY_RESTAURANT: '/restaurantId',
     GET_CUSTOMERS_BY_EVENTS: '/allCustomers',
     GET_EVENTS_BY_CUSTOMER: '/customerId',
-    POST_EVENT: 'event',
+    POST_EVENT: '/event',
     UPDATE_EVENT: '/event',
 
-
+    GET_REGISTRATIONS_CUSTOMER: '/customerRegistrations',
+    GET_REGISTRATIONS_EVENT: '/eventRegistrations',
 
     /**Response status codes */
     RES_UNKNOWN_ERROR: 502,
