@@ -18,7 +18,7 @@ customerRouter.route(GET_CUSTOMER_PROFILE).get(customerServices.getCustomer);
 customerRouter
   .route(POST_CUSTOMER_SIGNUP)
   .post(customerServices.createCustomer);
-// customerRouter.route(POST_CUSTOMER_IMAGE).post(customerServices.uploadImage);
+customerRouter.route(POST_CUSTOMER_IMAGE).post(customerServices.uploadImage);
 customerRouter
   .route(UPDATE_CUSTOMER_PROFILE)
   .put(customerServices.updateCustomerProfile);

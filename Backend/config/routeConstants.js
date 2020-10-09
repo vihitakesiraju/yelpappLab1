@@ -7,6 +7,7 @@ module.exports = {
   POST_CUSTOMER_SIGNUP: "/signup",
   UPDATE_CUSTOMER_PROFILE: "/profile",
   UPDATE_CUSTOMER_IMAGE: "/image",
+  POST_CUSTOMER_IMAGE: "/image",
 
   POST_CUSTOMER_REVIEW: "/review",
 
@@ -56,6 +57,7 @@ module.exports = {
   GET_EVENTS_BY_CUSTOMER: "/customerId",
   POST_EVENT: "/event",
   UPDATE_EVENT: "/event",
+  POST_EVENT_REGISTRATION: "/register",
 
   GET_REGISTRATIONS_CUSTOMER: "/customerRegistrations",
   GET_REGISTRATIONS_EVENT: "/eventRegistrations",

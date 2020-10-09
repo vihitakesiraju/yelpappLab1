@@ -24,7 +24,7 @@ eventRouter
   .route(GET_REGISTRATIONS_EVENT)
   .get(eventServices.getRegistrationsByEventId);
 
-// eventRouter.route(POST_EVENT_REGISTRATION).post(eventServices.registerEvent);
+eventRouter.route(POST_EVENT_REGISTRATION).post(eventServices.registerEvent);
 eventRouter.route(POST_EVENT).post(eventServices.createEvent);
 
 module.exports = eventRouter;

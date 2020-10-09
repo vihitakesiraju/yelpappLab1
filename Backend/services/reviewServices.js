@@ -13,7 +13,7 @@ const {
 
 module.exports.getReviewsByRestaurant = (req, res) => {
   console.log("Inside Reviews GET by Restaurant service");
-  console.log(req.query);
+  console.log("inside reviews", req.query);
   con.query(
     `
     SELECT stars,review_date,review_text,customer_name FROM reviews INNER JOIN customer_primary_data ON reviews.customer_id=customer_primary_data.customer_id WHERE restaurant_id ="${req.query.restaurant_id}";
