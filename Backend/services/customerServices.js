@@ -116,39 +116,3 @@ module.exports.updateCustomerProfile = (req, res) => {
     }
   );
 };
-
-module.exports.uploadImage = (req, res) => {
-  console.log("Inside Customer image POST service");
-  console.log(req.body);
-  try {
-    // console.log(req.data);
-
-    // const storage = multer.diskStorage({
-    //   destination(req, file, cb) {
-    //     cb(null, "../ImageData/CustomerImages");
-    //   },
-    //   filename(req, file, cb) {
-    //     cb(null, `${file.originalname}`);
-    //   },
-    // });
-
-    // const upload = multer({
-    //   storage,
-    // }).single("file");
-
-    // upload(req, res, (err) => {
-    //   // console.log('In the saving part');
-    //   if (err instanceof multer.MulterError) {
-    //     return res.status(500);
-    //   }
-    //   if (err) {
-    //     return res.status(500);
-    //   }
-    //   return res.status(200);
-    // });
-    res.status(RES_SUCCESS).end("Uploaded");
-  } catch (error) {
-    console.log(error);
-    res.status(RES_INTERNAL_SERVER_ERROR).end(JSON.stringify(error));
-  }
-};

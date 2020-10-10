@@ -6,8 +6,11 @@ module.exports = {
   GET_ALL_CUSTOMER_PROFILES: "/allcustomers",
   POST_CUSTOMER_SIGNUP: "/signup",
   UPDATE_CUSTOMER_PROFILE: "/profile",
-  UPDATE_CUSTOMER_IMAGE: "/image",
-  POST_CUSTOMER_IMAGE: "/image",
+
+  //images
+  GET_IMAGE_USER_PROFILE: "/userProfile",
+  POST_IMAGE_USER_PROFILE: "/userProfile",
+  UPDATE_USER_IMAGE: "/userProfile",
 
   POST_CUSTOMER_REVIEW: "/review",
 
