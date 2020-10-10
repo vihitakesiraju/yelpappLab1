@@ -21,6 +21,8 @@ class UserNavbar extends Component {
   render() {
     let redirectVar = null;
     if (cookie.load("cookie") === undefined) {
+      this.props.history.push("/");
+      console.log("Test");
       redirectVar = <Redirect to="/" />;
     }
     return (
