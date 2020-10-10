@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import bgImage from "../../../Assets/BackgroundImages/LandingPage.jpg";
+import bgImage from "../../../Assets/BackgroundImages/Homepage.jpg";
 
 class LandingPage extends Component {
   state = {};

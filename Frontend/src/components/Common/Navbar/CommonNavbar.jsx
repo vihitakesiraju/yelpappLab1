@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import cookie from "react-cookies";
 import { Redirect } from "react-router";
+import bgImage from "../../../Assets/BackgroundImages/logo.jpeg";
 // import { login, logout } from '../../../reduxConfig/LoginActions'
 // import { connect } from 'react-redux';
 
@@ -15,9 +16,20 @@ class CommonNavbar extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"></a>
+
           <a class="navbar-brand" href="/">
-            Yelp!
+            <img
+              src={bgImage}
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt=""
+            ></img>
+          </a>
+          <a class="navbar-brand" href="/">
+            Yelp
           </a>
           <button
             class="navbar-toggler"
@@ -38,18 +50,13 @@ class CommonNavbar extends Component {
                   Home <span class="sr-only">(current)</span>
                 </a>
               </li>
-              {/* <li class="nav-item">
-                                <a class="nav-link" href="#">Customer Sign Up</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Restaurant Sign Up</a>
-                            </li> */}
-              <li class="nav-item">
+
+              <li class="nav-item active">
                 <a class="nav-link" href="/events">
                   Events
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item active dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -59,7 +66,7 @@ class CommonNavbar extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Join Us!
+                  Sign Up
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">
@@ -67,10 +74,6 @@ class CommonNavbar extends Component {
                   </a>
                   <a class="dropdown-item" href="#">
                     Restaurant
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
-                    Something else here
                   </a>
                 </div>
               </li>
@@ -83,6 +86,10 @@ class CommonNavbar extends Component {
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form> */}
+
+            <a class="new-link" style={{ color: "black" }} href="/">
+              Help<span class="sr-only">(current)</span>
+            </a>
             <a class="nav-link" style={{ color: "black" }} href="/login">
               Login <span class="sr-only">(current)</span>
             </a>
