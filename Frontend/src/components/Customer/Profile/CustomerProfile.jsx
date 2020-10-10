@@ -157,14 +157,15 @@ class UserProfile extends Component {
           <p>File Name: {this.state.selectedFile.name}</p>
         </div>
       );
-    } else {
-      return (
-        <div>
-          <br />
-          <p>Choose before Pressing the Upload button</p>
-        </div>
-      );
     }
+    // else {
+    //     return (
+    //         <div>
+    //             <br />
+    //             <p>Choose before Pressing the Upload button</p>
+    //         </div>
+    //     );
+    // }
   };
 
   onFileChange = (event) => {
@@ -186,9 +187,7 @@ class UserProfile extends Component {
             height="250px"
             className="imageCont"
           />
-
           <input type="file" onChange={this.onFileChange} />
-
           <button
             className="btn btn-danger"
             style={{ width: "100px" }}
@@ -196,7 +195,6 @@ class UserProfile extends Component {
           >
             Upload!
           </button>
-
           {this.fileData()}
         </div>
 

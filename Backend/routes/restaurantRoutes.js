@@ -10,6 +10,7 @@ const {
   GET_ALL_RESTAURANTS,
   GET_RESTAURANT_PROFILE,
   UPDATE_MENU_ITEM,
+  POST_MENU_ITEM,
 } = require("../config/routeConstants");
 
 restaurantRouter
@@ -27,9 +28,7 @@ restaurantRouter
 restaurantRouter
   .route(UPDATE_RESTAURANT_PROFILE)
   .put(restaurantServices.updateRestaurantProfile);
-restaurantRouter
-  .route(UPDATE_MENU_ITEM)
-  .post(restaurantServices.createMenuItem);
+restaurantRouter.route(POST_MENU_ITEM).post(restaurantServices.createMenuItem);
 restaurantRouter.route(UPDATE_MENU_ITEM).put(restaurantServices.updateMenuItem);
 restaurantRouter
   .route(GET_RESTAURANT_SEARCH)
