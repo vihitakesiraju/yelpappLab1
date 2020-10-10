@@ -31,7 +31,7 @@ module.exports.getCustomer = (req, res) => {
   console.log("Inside Customer GET service");
   console.log("req params" + JSON.stringify(req.query));
   con.query(
-    `SELECT * FROM customer_primary_data c1 INNER JOIN customer_secondary_data c2 ON c1.customer_id=c2.customer_id WHERE c1.email_id="${req.query.email_id}"`,
+    'SELECT * FROM customer_primary_data c1 INNER JOIN customer_secondary_data c2 ON c1.customer_id=c2.customer_id INNER JOIN profile_images p ON p.user_email=c1.email_idWHERE c1.email_id="${req.query.email_id}" ORDER BY p.image_path DESC LIMIT 1',
     (error, result) => {
       if (error) {
         console.log(error);

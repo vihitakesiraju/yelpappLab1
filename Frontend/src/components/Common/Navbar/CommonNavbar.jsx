@@ -69,7 +69,7 @@ class CommonNavbar extends Component {
                   Sign Up
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="customer/signup">
                     Customer
                   </a>
                   <a class="dropdown-item" href="#">

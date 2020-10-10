@@ -20,7 +20,7 @@ class UserProfile extends Component {
     selected_file: null,
     img: null,
     MODIFIED: "",
-
+    image_path: "",
     disabled: true,
     editstate: false,
     oldDetails: {},
@@ -123,10 +123,11 @@ class UserProfile extends Component {
   };
 
   onFileUpload = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(this.state);
     //  this.setState({ projectId: this.props.match.params.projectId })
     let formData = new FormData();
+
     formData.append("file", this.state.selectedFile);
     formData.append("customer_id", this.state.customer_id);
     formData.append("customer_name", this.state.customer_name);
@@ -145,11 +146,7 @@ class UserProfile extends Component {
         formData
       )
       .then((response) => {
-        if (response.status === 201) {
-          window.alert("File Uploaded Successfully");
-        } else {
-          console.log(response);
-        }
+        window.location.reload(false);
       });
   };
 
@@ -157,13 +154,7 @@ class UserProfile extends Component {
     if (this.state.selectedFile) {
       return (
         <div>
-          <p>File Details:</p>
           <p>File Name: {this.state.selectedFile.name}</p>
-          <p>File Type: {this.state.selectedFile.type}</p>
-          <p>
-            Last Modified:{" "}
-            {this.state.selectedFile.lastModifiedDate.toDateString()}
-          </p>
         </div>
       );
     } else {
@@ -185,11 +176,32 @@ class UserProfile extends Component {
 
   render() {
     console.log(this.state);
+    let profileURL = `${routeConstants.BACKEND_URL}${this.state.image_path}`;
     return (
       <div className="profile">
+        <div className="imageDiv">
+          <img
+            src={profileURL}
+            width="250px"
+            height="250px"
+            className="imageCont"
+          />
+
+          <input type="file" onChange={this.onFileChange} />
+
+          <button
+            className="btn btn-danger"
+            style={{ width: "100px" }}
+            onClick={this.onFileUpload}
+          >
+            Upload!
+          </button>
+
+          {this.fileData()}
+        </div>
+
         <form className="userdetails" encType="multipart/form-data">
           <h2>Edit Profile Details</h2>
-          <img src={this.state.img} width="100px" height="100px" />
           <div className="option">
             Name:{" "}
             <input
@@ -277,19 +289,7 @@ class UserProfile extends Component {
               name="blog_ref"
             />
           </div>
-          <div className="option">
-            Profile Image:{" "}
-            {/* <input
-                            label={this.state.oldDetails.blog_ref}
-                            disabled={this.state.disabled}
-                            value={this.state.blog_ref}
-                            onChange={this.handleChange}
-                            name="blog_ref"
-                        /> */}
-            <input type="file" onChange={this.onFileChange} />
-            <button onClick={this.onFileUpload}>Upload!</button>
-          </div>
-          <div className="option">{this.fileData()}</div>
+
           {/* {addresschange} */}
           <div
             className="option"

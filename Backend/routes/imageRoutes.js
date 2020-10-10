@@ -8,7 +8,7 @@ const {
   UPDATE_USER_IMAGE,
 } = require("../config/routeConstants");
 
-imageRouter.route(GET_IMAGE_USER_PROFILE).get(imageServices.getProfileImage);
+//imageRouter.route(GET_IMAGE_USER_PROFILE).get(imageServices.getProfileImage);
 imageRouter
   .route(POST_IMAGE_USER_PROFILE)
   .post(imageServices.uploadUserProfile);
