@@ -4,7 +4,7 @@ import cookie from "react-cookies";
 import { Redirect } from "react-router";
 import { logout } from "../../../reduxConfig/LoginActions";
 import { connect } from "react-redux";
-
+import bgImage from "../../../Assets/BackgroundImages/yelp-1-logo.png";
 //create the Navbar Component
 class RestaurantNavbar extends Component {
   // constructor(props) {
@@ -28,9 +28,19 @@ class RestaurantNavbar extends Component {
       <div>
         {redirectVar}
 
-        <nav className="navbar navbar-expand-lg navbar-light bg-danger">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/">
+            <img
+              src={bgImage}
+              width="30"
+              height="30"
+              href="/"
+              class="d-inline-block align-top"
+              alt=""
+            ></img>
+          </a>
           <a className="navbar-brand" href="/restaurant/home">
-            Yelp!
+            Yelp
           </a>
           <button
             className="navbar-toggler"
@@ -57,16 +67,12 @@ class RestaurantNavbar extends Component {
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Restaurant Sign Up</a>
                             </li> */}
-              <li className="nav-item">
+              <li className="nav-item active">
                 <a className="nav-link" href="/restaurant/events/home">
                   Events
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/restaurant/orders">
-                  Orders
-                </a>
-              </li>
+
               {/* 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,12 +94,20 @@ class RestaurantNavbar extends Component {
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form> */}
+
+            <a
+              className="nav-link"
+              style={{ color: "black" }}
+              href="/restaurant/orders"
+            >
+              Your Orders
+            </a>
             <a
               className="nav-link"
               style={{ color: "black" }}
               href="/restaurant/profile"
             >
-              Profile
+              My Details
             </a>
             <button
               className="nav-link"

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import cookie from "react-cookies";
 import { Redirect } from "react-router";
-import bgImage from "../../../Assets/BackgroundImages/logo.jpeg";
+import bgImage from "../../../Assets/BackgroundImages/yelp-1-logo.png";
 // import { login, logout } from '../../../reduxConfig/LoginActions'
 // import { connect } from 'react-redux';
 
@@ -52,7 +52,7 @@ class CommonNavbar extends Component {
               </li>
 
               <li class="nav-item active">
-                <a class="nav-link" href="/events">
+                <a class="nav-link" href="/restaurant/events/all">
                   Events
                 </a>
               </li>

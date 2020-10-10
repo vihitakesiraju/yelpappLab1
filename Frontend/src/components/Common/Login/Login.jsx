@@ -11,7 +11,7 @@ import {
   authFlagHandler,
   login,
 } from "../../../reduxConfig/LoginActions";
-import loginImage from "../../../Assets/BackgroundImages/LoginImage.jpg";
+import loginImage from "../../../Assets/BackgroundImages/yelp-1-logo.png";
 import "./Login.styles.css";
 //Define a Login Component
 class Login extends Component {
@@ -31,6 +31,7 @@ class Login extends Component {
   inputChangeHandler = (e) => {
     const { value, name } = e.target;
     this.setState({ [name]: value });
+    console.log(e.target);
   };
 
   emailChangeHandler = (e) => {
@@ -170,41 +171,86 @@ class Login extends Component {
       redirectVar = <Redirect to="/" />;
     }
     return (
-      <div className="loginPage">
-        <div className="loginImage">
-          <img src={loginImage} alt="loginImage" width="400px" height="550px" />
-        </div>
-        <div className="loginContainer">
-          {redirectVar}
+      <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="user_card">
+            <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                <img src={loginImage} class="brand_logo" alt="Logo"></img>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+              <form>
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    name="username"
+                    onChange={this.inputChangeHandler}
+                    required
+                    class="form-control input_user"
+                    placeholder="username"
+                  ></input>
+                </div>
+                <div class="input-group mb-2">
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </div>
+                  <input
+                    onChange={this.inputChangeHandler}
+                    required
+                    type="password"
+                    name="password"
+                    class="form-control input_pass"
+                    placeholder="password"
+                  ></input>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customControlInline"
+                    ></input>
+                    <label
+                      class="custom-control-label"
+                      for="customControlInline"
+                    >
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                  <button
+                    onClick={this.submitLogin}
+                    type="button"
+                    name="button"
+                    class="btn login_btn"
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
 
-          <div className="panel">
-            <p>Enter your username and password</p>
+            <div class="mt-4">
+              <div class="d-flex justify-content-center links">
+                Don't have an account?{" "}
+                <a href="#" class="ml-2">
+                  Sign Up
+                </a>
+              </div>
+              <div class="d-flex justify-content-center links">
+                <a href="#">Forgot your password?</a>
+              </div>
+            </div>
           </div>
-
-          <div className="form-group">
-            <input
-              onChange={this.inputChangeHandler}
-              required
-              type="text"
-              className="form-control"
-              name="username"
-              placeholder="Username"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              onChange={this.inputChangeHandler}
-              required
-              type="password"
-              className="form-control"
-              name="password"
-              placeholder="Password"
-            />
-          </div>
-          <button onClick={this.submitLogin} className="btn btn-danger">
-            Login
-          </button>
-          {this.state.loginStatus}
         </div>
       </div>
     );

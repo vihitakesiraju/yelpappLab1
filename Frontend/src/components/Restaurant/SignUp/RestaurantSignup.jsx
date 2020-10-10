@@ -6,6 +6,7 @@ import CustomInput from "../../Common/CustomInput/CustomInput";
 import CustomButton from "../../Common/CustomButton/CustomButton";
 import { Link } from "react-router-dom";
 import { setRawCookie } from "react-cookies";
+import bgImage from "../../../Assets/BackgroundImages/Homepage.jpg";
 
 class RestaurantSignUp extends Component {
   state = {
@@ -48,6 +49,7 @@ class RestaurantSignUp extends Component {
   render() {
     return (
       <div className="signUp">
+        <img src={bgImage} class="img-fluid" alt="Responsive image" />
         <h1>New Business?</h1>
         <h2>Create an account </h2>
         <h5> and start Yelping!</h5>

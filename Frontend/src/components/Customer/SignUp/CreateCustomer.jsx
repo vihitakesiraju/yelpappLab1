@@ -184,16 +184,16 @@ class CreateUser extends Component {
   render() {
     //redirect based on successful login
     let redirectVar = null;
-    // if (cookie.load('cookie')) {
+    //if (cookie.load('cookie')) {
     //     redirectVar = <Redirect to="/home" />
     // }
     return (
       <div>
         <div className="navbar">
-          <h4>Navbar</h4>
+          <h4></h4>
           {CommonNavbar}
         </div>
-        {/* {redirectVar} */}
+        {/*{redirectVar}*/}
         <div className="signUp">
           <h1>New User?</h1>
           <h2>Create an account </h2>
@@ -214,6 +214,7 @@ class CreateUser extends Component {
                   onChange={this.nameHandler}
                   required
                 />
+                <br></br>
                 Email:
                 <input
                   type="email"
@@ -223,6 +224,7 @@ class CreateUser extends Component {
                   onChange={this.emailHandler}
                   required
                 />
+                <br></br>
                 Password:
                 <input
                   type="password"
@@ -232,6 +234,7 @@ class CreateUser extends Component {
                   onChange={this.passwordHandler}
                   required
                 />
+                <br></br>
                 Confirm Password:
                 <input
                   type="password"
@@ -241,6 +244,7 @@ class CreateUser extends Component {
                   onChange={this.confirmPasswordHandler}
                   required
                 />
+                <br></br>
                 Phone:
                 <input
                   type="text"
@@ -250,6 +254,7 @@ class CreateUser extends Component {
                   onChange={this.phoneHandler}
                   required
                 />
+                <br></br>
                 Birthday:
                 <input
                   type="text"
@@ -259,6 +264,7 @@ class CreateUser extends Component {
                   onChange={this.birthdayHandler}
                   required
                 />
+                <br></br>
                 About:
                 <input
                   type="text"
@@ -268,6 +274,7 @@ class CreateUser extends Component {
                   onChange={this.aboutHandler}
                   required
                 />
+                <br></br>
                 Things Loved:
                 <input
                   type="text"
@@ -276,6 +283,7 @@ class CreateUser extends Component {
                   // value={this.props.thingsLoved}
                   onChange={this.thingsLovedHandler}
                 />
+                <br></br>
                 Find Me @:
                 <input
                   type="text"
@@ -284,6 +292,7 @@ class CreateUser extends Component {
                   // value={this.props.findMe}
                   onChange={this.findMeHandler}
                 />
+                <br></br>
                 Blogs:
                 <input
                   type="text"
@@ -293,6 +302,7 @@ class CreateUser extends Component {
                   onChange={this.blogsHandler}
                 />
               </div>
+              <br></br>
               <CustomButton type="submit">SignUp</CustomButton>
             </form>
           </div>
