@@ -7,10 +7,10 @@ const dbConfig = {
   database: process.env.SQL_DATABASE,
 };
 const pool = mysql.createPool({ ...dbConfig, multipleStatements: true });
-pool.connect(function (err) {
-  //console.log(process.env);
-  if (err) throw err;
-  console.log("Connected to DB!");
-});
+// pool.connect(function (err) {
+//   //console.log(process.env);
+//   if (err) throw err;
+//   console.log("Connected to DB!");
+// });
 
 module.exports = pool;

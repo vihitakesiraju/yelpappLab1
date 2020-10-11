@@ -2,7 +2,7 @@ import Axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import routeConstants from "../../../Config/routeConstants";
-
+import "./OrderDetails.styles.css";
 class OrderDetails extends Component {
   state = {
     resData: {},
@@ -30,7 +30,7 @@ class OrderDetails extends Component {
     let renderVar;
     if (restData) {
       renderVar = (
-        <div className="restCard">
+        <div className="restCardOrders">
           <h4>OrderDetails {localStorage.getItem("order_id")}</h4>
 
           <h5>Restaurant Name:{restData.restaurant_name}</h5>
@@ -57,12 +57,7 @@ class OrderDetails extends Component {
     } else {
       renderVar = <h4>Unable to load</h4>;
     }
-    return (
-      <div>
-        {/* <h4>OrderDetails {localStorage.getItem('order_id')}</h4> */}
-        {renderVar}
-      </div>
-    );
+    return <div className="custOrderDetails">{renderVar}</div>;
   }
 }
 

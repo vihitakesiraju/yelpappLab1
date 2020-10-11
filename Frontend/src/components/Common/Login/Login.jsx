@@ -237,6 +237,7 @@ class Login extends Component {
                   </button>
                 </div>
               </form>
+              {this.state.loginStatus}
             </div>
 
             <div class="mt-4">

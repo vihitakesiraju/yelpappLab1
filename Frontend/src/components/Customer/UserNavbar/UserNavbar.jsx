@@ -4,6 +4,8 @@ import cookie from "react-cookies";
 import { Redirect } from "react-router";
 import { connect } from "react-redux";
 import { login, logout } from "../../../reduxConfig/LoginActions";
+import yelpLogo from "../../../Assets/BackgroundImages/yelp-1-logo.png";
+
 //create the Navbar Component
 class UserNavbar extends Component {
   // constructor(props) {
@@ -28,9 +30,9 @@ class UserNavbar extends Component {
     return (
       <div>
         {redirectVar}
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-danger">
           <a className="navbar-brand" href="/customer/home">
-            Yelp!
+            <img src={yelpLogo} width="60px" height="30px" />
           </a>
           <button
             className="navbar-toggler"

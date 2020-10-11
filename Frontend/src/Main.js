@@ -82,7 +82,7 @@ class Main extends Component {
         <Route exact path="/restaurant/profile" component={RestaurantProfile} />
         <Route
           exact
-          path="/restaurant/menu/create"
+          path="/restaurant/createMenuItem"
           component={CreateMenuItem}
         />
         <Route exact path="/restaurant/orders" component={RestaurantOrders} />
