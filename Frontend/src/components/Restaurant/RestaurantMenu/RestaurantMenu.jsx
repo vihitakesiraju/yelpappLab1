@@ -4,7 +4,7 @@ import constants from "../../../Config/routeConstants";
 import cookie from "react-cookies";
 import RestaurantMenuCard from "./RestaurantMenuCard/RestaurantMenuCard";
 import "./RestaurantMenu.styles.css";
-
+import menuIcon from "../../../Assets/BackgroundImages/menu_icon.jpg";
 class RestaurantMenu extends Component {
   state = {
     res: [],
@@ -71,19 +71,17 @@ class RestaurantMenu extends Component {
       dishes = <h3>Unable to fetch menu.</h3>;
     }
     return (
-      <div className="menuPage">
-        <div className="menuList">
-          <div className="menuListFlex2">
-            <h5>Appetizers</h5>
-            <div className="menuList12">{appetizers}</div>
-            <h5>Salads</h5>
-            <div className="menuList12">{salads}</div>
-            <h5>Mains</h5>
-            <div className="menuList12">{mains}</div>
-            <h5>Desserts</h5>
-            <div className="menuList12">{desserts}</div>
-            <h5>Beverages</h5>
-            <div className="menuList12">{beverages}</div>
+      <div class="image">
+        <div className="menuPage">
+          <div className="menuList">
+            <div className="menuListFlex2">
+              <div className="menuList12">{appetizers}</div>
+              <div className="menuList12">{salads}</div>
+              <div className="menuList12">{mains}</div>
+              <div className="menuList12">{desserts}</div>
+
+              <div className="menuList12">{beverages}</div>
+            </div>
           </div>
         </div>
       </div>

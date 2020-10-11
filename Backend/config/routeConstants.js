@@ -13,7 +13,7 @@ module.exports = {
   UPDATE_USER_IMAGE: "/userProfile",
 
   POST_CUSTOMER_REVIEW: "/review",
-  POST_IMAGE_MENU_ITEM: "dishImage",
+  POST_IMAGE_MENU_ITEM: "/dishImage",
   POST_IMAGE_EVENT: "/eventImage",
 
   //Login Routes
@@ -36,8 +36,8 @@ module.exports = {
 
   UPDATE_RESTAURANT_PROFILE: "/profile",
   POST_RESTAURANT_MENU: "/menu",
-  POST_MENU_ITEM: "/menuCreate",
-  UPDATE_MENU_ITEM: "/menuCreate",
+  POST_MENU_ITEM: "/menuItem",
+  UPDATE_MENU_ITEM: "/menuItem",
   POST_RESTAURANT_MENU: "/menu",
 
   //Reviews

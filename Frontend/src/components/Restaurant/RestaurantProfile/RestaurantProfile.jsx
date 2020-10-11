@@ -163,7 +163,7 @@ class RestaurantProfile extends Component {
                 type="text"
                 class="form-control"
                 id="restaurant_name"
-                placeholder="Password"
+                placeholder="Name"
                 value={this.state.restaurant_name}
                 disabled
               />
@@ -286,8 +286,9 @@ class RestaurantProfile extends Component {
           </div>
           {/* </div> */}
           {/* <div class="form-row"> */}
+          <br></br>
           <div></div>
-          <div>
+          <div class="col-md-3">
             <button
               type="submit"
               onClick={this.handleSubmit}

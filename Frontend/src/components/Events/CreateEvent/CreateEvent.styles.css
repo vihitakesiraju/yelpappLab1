@@ -1,4 +1,5 @@
 .formData2 {
+  background: url(../../../Assets/BackgroundImages/rest_jumbo.jpg) no-repeat;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-around;

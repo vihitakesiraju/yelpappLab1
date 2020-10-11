@@ -61,7 +61,7 @@ class RestaurantOrderDetails extends Component {
     let restData = { ...this.state.resData };
     // console.log(restData)
     if (restData) {
-      restData.order_date = restData.order_date.split("T")[0];
+      restData.order_date = restData.order_date;
     }
 
     let items = this.state.itemsArray.map((item) => {
@@ -98,7 +98,7 @@ class RestaurantOrderDetails extends Component {
               <option value="2">Picked Up</option>
               <option value="3">On the way</option>
               <option value="4">Delivered</option>
-              <option value="5">In the making</option>
+              <option value="5">Preparing</option>
               <option value="6">Order Placed</option>
               <option value="7">Cancelled</option>
             </select>

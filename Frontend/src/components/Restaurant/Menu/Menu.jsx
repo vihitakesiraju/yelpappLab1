@@ -7,6 +7,7 @@ import "./Menu.styles.css";
 import Checkout from "../../Customer/Checkout/Checkout";
 import CustomerReviews from "../../Customer/CustomerReviews/CustomerReviews";
 import MapDisplay from "../../Customer/MapDisplay/MapDisplay";
+import menuIcon from "../../../Assets/BackgroundImages/menu_icon.jpg";
 class Menu extends Component {
   state = {
     res: [],
@@ -21,7 +22,7 @@ class Menu extends Component {
       )
       .then((res) => {
         this.setState({ res: res.data });
-        // console.log(res.data);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);

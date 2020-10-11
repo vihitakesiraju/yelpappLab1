@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./RestaurantHome.styles.css";
-import menuIcon from "../../../Assets/BackgroundImages/menu_icon.jpg";
+
 import jumborest from "../../../Assets/BackgroundImages/rest_jumbo.jpg";
 
 class RestaurantHome extends Component {
   state = {};
   render() {
     return (
-      <div class="image">
+      <div class="image_rest_home">
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">
@@ -45,6 +45,13 @@ class RestaurantHome extends Component {
                 href="/restaurant/profile"
               >
                 Profile
+              </a>
+              <a
+                class="navbar-brand"
+                style={{ color: "white" }}
+                href="/restaurant/createMenuItem"
+              >
+                Update Menu
               </a>
             </div>
           </div>

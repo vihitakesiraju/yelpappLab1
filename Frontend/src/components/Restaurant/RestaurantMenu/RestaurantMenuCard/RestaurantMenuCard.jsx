@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 
 import "./RestaurantMenuCard.styles.css";
-
+import menuIcon from "../../../../Assets/BackgroundImages/menu_icon.jpg";
 import { connect } from "react-redux";
 import {
   addToCart,
@@ -11,6 +11,7 @@ import {
 } from "../../../../reduxConfig/Cart/CartActions";
 import Axios from "axios";
 import routeConstants from "../../../../Config/routeConstants";
+
 // import {CART_ADD_ITEM,CART_REMOVE_ITEM} from '../../../reduxConfig/actionTypes'
 
 // const [expanded, setExpanded] = React.useState(false);
@@ -83,6 +84,7 @@ class RestaurantMenuCard extends Component {
       <div className="menuItemRes">
         <form className="formDataRes">
           {/* <div className="profile"> */}
+
           <div className="restImage2">
             <img
               src={imageURL}
@@ -156,7 +158,7 @@ class RestaurantMenuCard extends Component {
             <button
               type="submit"
               onClick={this.handleSubmit}
-              class="btn btn-danger"
+              class="btn btn-info"
             >
               Update Details
             </button>

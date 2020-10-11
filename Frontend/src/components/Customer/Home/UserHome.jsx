@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import routeConstants from "../../../Config/routeConstants";
 
 import "./UserHome.styles.css";
-import yelpLogo from "../../../Assets/BackgroundImages/yelp-1-logo.png";
+
 import Axios from "axios";
 
 import RestaurantList from "../RestaurantList/RestaurantList";
@@ -27,7 +27,6 @@ class UserHome extends Component {
       <div>
         <div class="jumbotron jumbotron-fluid">
           <div class="container2">
-            <img src={yelpLogo} width="200px" height="100px" />
             <div className="searchComp">
               <form class="form-inline" onSubmit={this.searchHandler}>
                 <input

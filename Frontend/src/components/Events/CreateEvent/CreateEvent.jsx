@@ -4,7 +4,7 @@ import { Redirect, withRouter } from "react-router-dom";
 import cookie from "react-cookies";
 import Axios from "axios";
 import routeConstants from "../../../Config/routeConstants";
-
+import jumborest from "../../../Assets/BackgroundImages/rest_jumbo.jpg";
 class CreateEvent extends Component {
   state = {
     event_name: "",
@@ -113,6 +113,7 @@ class CreateEvent extends Component {
     return (
       <div className="cont">
         <h4>Create Event</h4>
+
         {/* <div className="imageDiv">
                 <img src={profileURL} width='150px' height='150px' className="imageCont" />
                 <input type="file" onChange={this.onFileChange} />
@@ -186,17 +187,7 @@ class CreateEvent extends Component {
               value={this.state.event_longitude}
             />
           </div>
-          <div class="form-group1 ">
-            <label>Hashtags</label>{" "}
-            <input
-              required
-              onChange={this.inputChangeHandler}
-              type="text"
-              class="form-control"
-              name="event_hashtags"
-              value={this.state.event_hashtags}
-            />
-          </div>
+
           <div class="form-group1 ">
             <button
               type="submit"

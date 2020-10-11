@@ -1,36 +1,38 @@
 import React, { Component } from "react";
 import "./RestaurantHome.styles.css";
+import jumborest from "../../../Assets/BackgroundImages/rest_jumbo.jpg";
 class EventsHome extends Component {
   state = {};
   render() {
     return (
-      <div className="homeLayout">
-        <div className="homeGrid">
-          <a
-            href="/restaurant/events/create"
-            class="sq list-group-item list-group-item-danger "
-          >
-            Create an Event
-          </a>
-          <a
-            href="/restaurant/events/list"
-            class="sq list-group-item list-group-item-danger "
-          >
-            List of your Events
-          </a>
-          <a
-            href="/restaurant/events/all"
-            class="sq list-group-item list-group-item-danger "
-          >
-            All Events
-          </a>
-          <a
-            href="/restaurant/events/update"
-            class="sq list-group-item list-group-item-danger "
-          >
-            Update an Event
-          </a>
-        </div>
+      <div class="image_rest_home">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a
+                class="navbar-brand"
+                style={{ color: "white" }}
+                href="/restaurant/events/create"
+              >
+                Create Event!!
+              </a>
+              <a
+                class="navbar-brand"
+                style={{ color: "white" }}
+                href="/restaurant/events/update"
+              >
+                Update Event!!
+              </a>
+              <a
+                class="navbar-brand"
+                style={{ color: "white" }}
+                href="/restaurant/events/list"
+              >
+                Display Events!!
+              </a>
+            </div>
+          </div>
+        </nav>
       </div>
     );
   }
