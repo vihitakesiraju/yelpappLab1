@@ -1,5 +1,5 @@
-//import the require dependencies
 require("dotenv").config({ path: __dirname + "/.env" });
+let routeConstants = require("./config/routeConstants");
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -8,8 +8,13 @@ var cookieParser = require("cookie-parser");
 var cors = require("cors");
 app.set("view engine", "ejs");
 const path = require("path");
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: `${routeConstants.FRONTEND_URL}`, credentials: true }));
+// const formidable = require('express-formidable');
+// app.use(formidable());
+
 app.use("/imageData", express.static(path.join(__dirname, "imageData")));
+
+// app.use(express.static(path.join(__dirname, 'imageData')));
 
 const customerRoutes = require("./routes/customerRoutes");
 const loginRoutes = require("./routes/loginRoute");
@@ -18,9 +23,6 @@ const orderRoutes = require("./routes/orderRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
 const imageRoutes = require("./routes/imageRoutes");
-
-//use cors to allow cross origin resource sharing
-//app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 //use express session to maintain session data
 app.use(
@@ -40,7 +42,10 @@ app.use(bodyParser.json());
 
 //Allow Access Control
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    `${routeConstants.FRONTEND_URL}`
+  );
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader(
     "Access-Control-Allow-Methods",

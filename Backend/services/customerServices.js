@@ -31,7 +31,10 @@ module.exports.getCustomer = (req, res) => {
   console.log("Inside Customer GET service");
   console.log("req params" + JSON.stringify(req.query));
   con.query(
-    'SELECT * FROM customer_primary_data c1 INNER JOIN customer_secondary_data c2 ON c1.customer_id=c2.customer_id INNER JOIN profile_images p ON p.user_email=c1.email_idWHERE c1.email_id="${req.query.email_id}" ORDER BY p.image_path DESC LIMIT 1',
+    `SELECT * FROM customer_primary_data c1
+   INNER JOIN customer_secondary_data c2 ON c1.customer_id=c2.customer_id 
+   INNER JOIN profile_images p ON p.user_email=c1.email_id
+   WHERE c1.email_id="${req.query.email_id}" ORDER BY p.image_path DESC LIMIT 1 `,
     (error, result) => {
       if (error) {
         console.log(error);
@@ -56,6 +59,7 @@ module.exports.createCustomer = (req, res) => {
         INSERT INTO login_credentials (email_id,user_password,user_type) VALUES ("${req.body.EMAIL}","${req.body.PASSWORD}","1");
         INSERT INTO customer_primary_data (customer_name, birthday, contact_number,email_id,about) VALUES ("${req.body.NAME}", "${req.body.BIRTHDAY}",${req.body.PHONE},"${req.body.EMAIL}","${req.body.ABOUT}");
         INSERT INTO customer_secondary_data (customer_id,things_loved,find_me,blog_ref,singup_date ) VALUES(LAST_INSERT_ID(),"${req.body.THINGS_LOVED}","${req.body.FIND_ME}","${req.body.BLOG_REF}",CURDATE());
+        INSERT INTO profile_images (user_email,image_path) VALUES ("${req.body.EMAIL}"," ");
         COMMIT; `,
     (error, result) => {
       if (error) {

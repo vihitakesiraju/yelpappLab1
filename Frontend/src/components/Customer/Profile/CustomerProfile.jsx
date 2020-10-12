@@ -179,6 +179,7 @@ class UserProfile extends Component {
   render() {
     // console.log(this.state)
     let profileURL = `${routeConstants.BACKEND_URL}${this.state.image_path}`;
+    console.log(this.state);
     return (
       <div className="profile">
         <div className="imageDiv">
@@ -202,7 +203,6 @@ class UserProfile extends Component {
         <form className="userdetails" encType="multipart/form-data">
           <h2>Edit Profile Details</h2>
           <div className="option">
-            Name:{" "}
             <input
               label={this.state.oldDetails.customer_name}
               disabled={this.state.disabled}

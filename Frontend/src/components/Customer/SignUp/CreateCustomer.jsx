@@ -49,41 +49,6 @@ class CreateUser extends Component {
     });
   }
 
-  // submit Login handler to send a request to the node backend
-  submitLogin = (e) => {
-    var headers = new Headers();
-    //prevent page from refresh
-    e.preventDefault();
-    const data = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-    //set the with credentials to true
-    axios.defaults.withCredentials = true;
-    //make a post request with the user data
-    axios
-      .post("http://localhost:3001/login", data)
-      .then((response) => {
-        console.log("Status Code : ", response.status);
-        if (response.status === 200) {
-          this.setState({
-            authFlag: true,
-          });
-        } else {
-          this.setState({
-            authFlag: false,
-          });
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({
-          loginStatus: "Login Failed",
-        });
-        //window.alert("Login Failed");
-      });
-  };
-
   handleChange = (e) => {
     //  console.log(this.state);
     const { value, name } = e.target;
@@ -151,7 +116,7 @@ class CreateUser extends Component {
 
       axios
         .post(
-          `${Constants.BACKEND_SERVER.URL}/customer${routeConstants.POST_CUSTOMER_SIGNUP}`,
+          `${routeConstants.BACKEND_URL}/customer${routeConstants.POST_CUSTOMER_SIGNUP}`,
           userdetails
         )
         .then((response) => {
@@ -184,16 +149,16 @@ class CreateUser extends Component {
   render() {
     //redirect based on successful login
     let redirectVar = null;
-    //if (cookie.load('cookie')) {
+    // if (cookie.load('cookie')) {
     //     redirectVar = <Redirect to="/home" />
     // }
     return (
       <div>
         <div className="navbar">
-          <h4></h4>
+          <h4>Navbar</h4>
           {CommonNavbar}
         </div>
-        {/*{redirectVar}*/}
+        {/* {redirectVar} */}
         <div className="signUp">
           <h1>New User?</h1>
           <h2>Create an account </h2>
@@ -257,7 +222,7 @@ class CreateUser extends Component {
                 <br></br>
                 Birthday:
                 <input
-                  type="text"
+                  type="date"
                   label="Birthday YYYY-MM-DD"
                   name="birthday"
                   // value={this.props.birthday}
