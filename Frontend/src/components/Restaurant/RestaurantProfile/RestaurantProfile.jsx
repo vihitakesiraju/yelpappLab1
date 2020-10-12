@@ -152,7 +152,7 @@ class RestaurantProfile extends Component {
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="Email"
+                placeholder="Email ID cannot be changed"
                 value={this.state.email}
                 disabled
               />
@@ -163,7 +163,7 @@ class RestaurantProfile extends Component {
                 type="text"
                 class="form-control"
                 id="restaurant_name"
-                placeholder="Name"
+                placeholder="Name can't be changed"
                 value={this.state.restaurant_name}
                 disabled
               />
