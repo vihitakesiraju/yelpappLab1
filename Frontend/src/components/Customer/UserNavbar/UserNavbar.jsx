@@ -69,10 +69,29 @@ class UserNavbar extends Component {
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Restaurant Sign Up</a>
                             </li> */}
-              <li className="nav-item active">
-                <a className="nav-link" href="/customer/events">
+              <li className="nav-item dropdown active">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   Events
                 </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a
+                    className="dropdown-item"
+                    href="/customer/events/registrations"
+                  >
+                    Your Registrations
+                  </a>
+                  <a className="dropdown-item" href="/customer/events">
+                    All Events
+                  </a>
+                </div>
               </li>
 
               {/* 

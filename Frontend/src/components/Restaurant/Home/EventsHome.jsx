@@ -30,6 +30,13 @@ class EventsHome extends Component {
               >
                 Display Events!!
               </a>
+              <a
+                class="navbar-brand"
+                style={{ color: "white" }}
+                href="/restaurant/events/list"
+              >
+                Check Registered!!
+              </a>
             </div>
           </div>
         </nav>
